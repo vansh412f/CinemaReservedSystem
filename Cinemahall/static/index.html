@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Seat Booking</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <h1 id="page-title">Cinema Hall</h1>
+                <button id="my-tickets-btn" class="nav-btn">My Tickets</button>
+            </div>
+            <p id="page-subtitle">Select a Movie</p>
+        </header>
+
+        <!-- Movie Selection View -->
+        <div id="movie-selection" class="view">
+            <div id="movie-list" class="movie-list">
+                <!-- Movies will be injected here -->
+            </div>
+        </div>
+
+        <!-- Seat Selection View -->
+        <div id="seat-selection" class="view hidden">
+            <button id="back-btn" class="back-btn">← Back to Movies</button>
+
+            <div class="screen-container">
+                <div class="screen"></div>
+                <p class="screen-text">Screen this way</p>
+            </div>
+
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="seat available"></div>
+                    <span>Available</span>
+                </div>
+                <div class="legend-item">
+                    <div class="seat selected"></div>
+                    <span>Selected</span>
+                </div>
+                <div class="legend-item">
+                    <div class="seat sold"></div>
+                    <span>Sold</span>
+                </div>
+                <div class="legend-item">
+                    <div class="seat held"></div>
+                    <span>Held</span>
+                </div>
+            </div>
+
+            <div id="seat-map" class="seat-map">
+                <!-- Seats will be generated here -->
+            </div>
+
+            <div class="booking-summary">
+                <div class="summary-info">
+                    <p>Selected: <span id="count">0</span></p>
+                    <p>Total: $<span id="total">0</span></p>
+                </div>
+                <button id="pay-btn" class="pay-btn">Proceed to Pay</button>
+            </div>
+
+            <div id="timer-container" class="timer-container hidden">
+                <p>Time remaining: <span id="timer">05:00</span></p>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- Booking Success Modal -->
+    <div id="booking-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="booking-confirmation">
+                <h2>Booking Confirmed</h2>
+                <p>Code: <strong id="card-code">CODE</strong></p>
+                <h3 id="card-movie">Movie Title</h3>
+                <p>Seats: <strong id="card-seats">A1, A2</strong></p>
+                <p>Time: <strong>19:00</strong></p>
+                <p>Enjoy the show!</p>
+                <button id="modal-close-btn" class="home-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast hidden">Message</div>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
